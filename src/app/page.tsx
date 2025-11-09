@@ -199,7 +199,7 @@ export default function Home() {
           </h2>
           <div className="flex flex-wrap gap-[18px]">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="w-full sm:w-[calc(50%-9px)] lg:w-[calc(33.333%-12px)] bg-bg-dark p-2 flex flex-col gap-6">
+              <div key={index} className="w-full sm:w-[calc(50%-9px)] lg:w-[calc(33.333%-12px)] bg-bg-dark p-2 flex flex-col gap-6 transition-transform duration-300 hover:scale-105">
                 <p className="text-base leading-6">{testimonial.quote}</p>
                 <div className="text-base leading-6">
                   <p className="font-bold">{testimonial.author}</p>
