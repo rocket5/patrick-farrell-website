@@ -29,8 +29,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
 
       - name: Restore cache
         uses: actions/cache@v4
@@ -44,28 +42,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Verify Next.js config
-        run: |
-          echo "Contents of next.config.ts:"
-          cat next.config.ts
-
       - name: Build with Next.js
         run: npm run build
 
-      - name: Verify output directory
+      - name: Verify static export
         run: |
-          echo "Contents of project root:"
-          ls -la
-          echo ""
+          echo "Checking for static export output..."
           if [ ! -d "out" ]; then
-            echo "ERROR: out directory not found!"
-            echo "Checking if .next exists instead:"
-            ls -la .next/ || echo ".next also not found"
+            echo "ERROR: 'out' directory not found!"
+            echo "This means Next.js did not perform a static export."
+            echo "Checking next.config.ts configuration..."
+            cat next.config.ts
+            echo ""
+            echo "Checking if next.config.js was created (this would override next.config.ts):"
+            ls -la next.config.* || true
             exit 1
           fi
-          echo "SUCCESS: out directory found"
-          echo "Contents of out directory:"
-          ls -la out/
+          echo "SUCCESS: Static export completed"
+          echo "Verifying out directory contains required files:"
+          ls -la out/ | head -20
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
