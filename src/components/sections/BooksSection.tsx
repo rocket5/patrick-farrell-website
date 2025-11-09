@@ -19,12 +19,12 @@ export function BooksSection({ books }: BooksSectionProps) {
       <h2 id="books-heading" className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-3">
         Published Books
       </h2>
-      <div className="flex flex-wrap justify-center gap-6 lg:gap-x-6 lg:gap-y-16">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-x-6 lg:gap-y-16">
         {displayedBooks.map((book, index) => {
           const BookWrapper = book.url ? 'a' : 'div';
           const wrapperProps = book.url
-            ? { href: book.url, target: "_blank" as const, rel: "noopener noreferrer", className: "w-full sm:w-[250px] flex flex-col items-center gap-3 cursor-pointer group" }
-            : { className: "w-full sm:w-[250px] flex flex-col items-center gap-3" };
+            ? { href: book.url, target: "_blank" as const, rel: "noopener noreferrer", className: "w-full max-w-[250px] mx-auto flex flex-col items-center gap-3 cursor-pointer group" }
+            : { className: "w-full max-w-[250px] mx-auto flex flex-col items-center gap-3" };
 
           return (
             <BookWrapper key={index} {...wrapperProps}>
