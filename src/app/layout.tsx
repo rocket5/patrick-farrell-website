@@ -7,12 +7,16 @@ const sourceSans = Source_Sans_3({
   variable: "--font-source-sans",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
+  preload: true,
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {

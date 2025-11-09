@@ -5,9 +5,9 @@ import testimonialsData from "@/data/testimonials.json";
 import heroData from "@/data/hero.json";
 import bioData from "@/data/bio.json";
 import type { Book, Testimonial } from "@/types/data";
-import { BooksSection } from "@/components/BooksSection";
-import { ExpertiseSection } from "@/components/ExpertiseSection";
-import { OptimizedImage } from "@/components/OptimizedImage";
+import { BooksSection } from "@/components/sections/BooksSection";
+import { ExpertiseSection } from "@/components/sections/ExpertiseSection";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 
 export default function Home() {
   const books = booksData as Book[];

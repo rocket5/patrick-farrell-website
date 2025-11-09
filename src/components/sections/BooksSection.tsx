@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { Book } from "@/types/data";
-import { OptimizedImage } from "@/components/OptimizedImage";
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
 
 interface BooksSectionProps {
   books: Book[];
