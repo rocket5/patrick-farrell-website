@@ -227,8 +227,18 @@ export default function Home() {
         {/* Footer */}
         <footer className="pt-16 sm:pt-24 lg:pt-32">
           <div className="flex flex-col sm:flex-row justify-between text-base gap-4">
-            <p>© 2025 Patrick Farrell</p>
-            <p>Website by Rocket5</p>
+            <p>© {new Date().getFullYear()} Patrick Farrell</p>
+            <p>
+              Website by{" "}
+              <a
+                href="https://rocket5studios.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-text-muted transition-colors"
+              >
+                Rocket5
+              </a>
+            </p>
           </div>
         </footer>
       </main>
