@@ -1,25 +1,17 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import booksData from "@/data/books.json";
 import expertiseData from "@/data/expertise.json";
 import testimonialsData from "@/data/testimonials.json";
 import heroData from "@/data/hero.json";
 import bioData from "@/data/bio.json";
-import { withBasePath } from "@/lib/utils";
+import type { Book, Testimonial } from "@/types/data";
+import { BooksSection } from "@/components/BooksSection";
+import { ExpertiseSection } from "@/components/ExpertiseSection";
 
 export default function Home() {
-  const [openAccordion, setOpenAccordion] = useState<string | null>("for-everyone");
-  const [booksToShow, setBooksToShow] = useState(8);
-
-  const books = booksData;
-  const displayedBooks = books.slice(0, booksToShow);
-  const hasMoreBooks = booksToShow < books.length;
-
-  const accordionSections = expertiseData;
-  const testimonials = testimonialsData;
+  const books = booksData as Book[];
+  const testimonials = testimonialsData as Testimonial[];
 
   return (
     <div className="min-h-screen bg-bg-light">
@@ -33,7 +25,7 @@ export default function Home() {
                 <div className="w-full sm:w-[217px] shrink-0">
                   <div className="aspect-217/281 relative">
                     <Image
-                      src={withBasePath("/images/headshot.jpg")}
+                      src="/images/headshot.jpg"
                       alt="Patrick Farrell - Professional Editor based in Toronto, Canada"
                       fill
                       sizes="(max-width: 640px) 100vw, 217px"
@@ -109,91 +101,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Books Section */}
-        <section id="books" className="mb-12 sm:mb-16 lg:mb-24" aria-labelledby="books-heading">
-          <h2 id="books-heading" className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-3">
-            Published Books
-          </h2>
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-x-6 lg:gap-y-16">
-            {displayedBooks.map((book, index) => {
-              const BookWrapper = book.url ? 'a' : 'div';
-              const wrapperProps = book.url
-                ? { href: book.url, target: "_blank", rel: "noopener noreferrer", className: "w-full sm:w-[250px] flex flex-col items-center gap-3 cursor-pointer group" }
-                : { className: "w-full sm:w-[250px] flex flex-col items-center gap-3" };
+        {/* Books Section - Client Component */}
+        <BooksSection books={books} />
 
-              return (
-                <BookWrapper key={index} {...wrapperProps}>
-                  <div className="w-full aspect-826/1253 relative overflow-hidden">
-                    <Image
-                      src={withBasePath(book.image)}
-                      alt={book.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 250px"
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="text-center px-2 space-y-2">
-                    <p className="font-bold text-base leading-6">{book.title}</p>
-                    <p className="text-base leading-6">{book.author}</p>
-                  </div>
-                  <div className="h-0 w-24 border-t border-text-muted" />
-                  <div className="px-2">
-                    <p className="text-base leading-6 text-center">{book.role}</p>
-                  </div>
-                </BookWrapper>
-              );
-            })}
-          </div>
-          {hasMoreBooks && (
-            <div className="flex justify-center pt-8">
-              <button
-                onClick={() => setBooksToShow(prev => prev + 4)}
-                className="bg-bg-dark border border-text-muted px-4 py-3 text-base hover:bg-text-muted hover:text-bg-light transition-colors"
-              >
-                Load More
-              </button>
-            </div>
-          )}
-        </section>
-
-        {/* Expertise Section */}
-        <section id="expertise" className="mb-12 sm:mb-16 lg:mb-24" aria-labelledby="expertise-heading">
-          <h2 id="expertise-heading" className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-8">
-            Editorial Expertise
-          </h2>
-          {expertiseData.find(item => item.id === "introduction") && (
-            <p className="text-base leading-6 mb-8">
-              {expertiseData.find(item => item.id === "introduction")?.content}
-            </p>
-          )}
-          <div className="space-y-8">
-            {accordionSections.filter(section => section.id !== "introduction").map((section) => (
-              <div key={section.id} className="bg-bg-dark p-2">
-                <button
-                  onClick={() => setOpenAccordion(openAccordion === section.id ? null : section.id)}
-                  className="w-full flex items-center justify-between text-left"
-                >
-                  <h3 className="text-xl font-bold font-sans">
-                    {section.title}
-                  </h3>
-                  <div className="w-6 h-6 shrink-0">
-                    <Image
-                      src={withBasePath(openAccordion === section.id ? "/images/chevron-up.svg" : "/images/chevron-down.svg")}
-                      alt={openAccordion === section.id ? "Collapse" : "Expand"}
-                      width={24}
-                      height={24}
-                    />
-                  </div>
-                </button>
-                {openAccordion === section.id && section.content && (
-                  <div className="mt-4 text-base leading-6">
-                    <p>{section.content}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Expertise Section - Client Component */}
+        <ExpertiseSection sections={expertiseData} />
 
         {/* Testimonials Section */}
         <section id="testimonials" className="mb-12 sm:mb-16 lg:mb-24" aria-labelledby="testimonials-heading">
@@ -227,7 +139,7 @@ export default function Home() {
             >
               pherzen@gmail.com
             </a>{" "}
-            to talk about how I can help with your editing project in Toronto, Canada, or remotely across North America.
+            to talk about how I can help with your project.
           </p>
         </section>
 
