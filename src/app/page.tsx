@@ -160,11 +160,13 @@ export default function Home() {
           <h2 className="text-xl font-bold font-(family-name:--font-inter) border-b-2 border-bg-dark pb-2 mb-8">
             Expertise
           </h2>
-          <p className="text-base leading-6 mb-8">
-            I'm a professional editor with over 20 years of experience helping writers bring clarity, precision, and depth to their work.
-          </p>
+          {expertiseData.find(item => item.id === "introduction") && (
+            <p className="text-base leading-6 mb-8">
+              {expertiseData.find(item => item.id === "introduction")?.content}
+            </p>
+          )}
           <div className="space-y-8">
-            {accordionSections.map((section) => (
+            {accordionSections.filter(section => section.id !== "introduction").map((section) => (
               <div key={section.id} className="bg-bg-dark p-2">
                 <button
                   onClick={() => setOpenAccordion(openAccordion === section.id ? null : section.id)}
