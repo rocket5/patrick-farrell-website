@@ -114,27 +114,34 @@ export default function Home() {
             Books
           </h2>
           <div className="flex flex-wrap justify-center gap-6 lg:gap-x-6 lg:gap-y-16">
-            {displayedBooks.map((book, index) => (
-              <div key={index} className="w-full sm:w-[250px] flex flex-col items-center gap-3">
-                <div className="w-full aspect-[826/1253] relative">
-                  <Image
-                    src={book.image}
-                    alt={book.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 250px"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="text-center px-2 space-y-2">
-                  <p className="font-bold text-base leading-6">{book.title}</p>
-                  <p className="text-base leading-6">{book.author}</p>
-                </div>
-                <div className="h-0 w-24 border-t border-text-muted" />
-                <div className="px-2">
-                  <p className="text-base leading-6 text-center">{book.role}</p>
-                </div>
-              </div>
-            ))}
+            {displayedBooks.map((book, index) => {
+              const BookWrapper = book.url ? 'a' : 'div';
+              const wrapperProps = book.url
+                ? { href: book.url, target: "_blank", rel: "noopener noreferrer", className: "w-full sm:w-[250px] flex flex-col items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity" }
+                : { className: "w-full sm:w-[250px] flex flex-col items-center gap-3" };
+
+              return (
+                <BookWrapper key={index} {...wrapperProps}>
+                  <div className="w-full aspect-[826/1253] relative">
+                    <Image
+                      src={book.image}
+                      alt={book.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 250px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="text-center px-2 space-y-2">
+                    <p className="font-bold text-base leading-6">{book.title}</p>
+                    <p className="text-base leading-6">{book.author}</p>
+                  </div>
+                  <div className="h-0 w-24 border-t border-text-muted" />
+                  <div className="px-2">
+                    <p className="text-base leading-6 text-center">{book.role}</p>
+                  </div>
+                </BookWrapper>
+              );
+            })}
           </div>
           {hasMoreBooks && (
             <div className="flex justify-center pt-8">

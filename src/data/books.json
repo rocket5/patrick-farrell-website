@@ -3,120 +3,140 @@
     "image": "/images/book1.jpg",
     "title": "The Brain's Way of Healing",
     "author": "by Norman Doidge",
-    "role": "Assistant, copy editing, research"
+    "role": "Assistant, copy editing, research",
+    "url": "https://www.penguinrandomhouse.com/books/308751/the-brains-way-of-healing-by-norman-doidge-md/"
   },
   {
     "image": "/images/book2.jpg",
     "title": "The Uses of Humans in Experiment: Perspectives From the 17th to the 20th Century",
     "author": "by Erika Dyck & Larry Stewart",
-    "role": "Index"
+    "role": "Index",
+    "url": "https://brill.com/display/title/27075?language=en"
   },
   {
     "image": "/images/book3.jpg",
     "title": "A Culture's Catalyst: Historical Encounters with Peyote and the Native American Church In Canada",
     "author": "by Fannie Kahan & Erika Dyck",
-    "role": "Index"
+    "role": "Index",
+    "url": "https://uofmpress.ca/books/a-cultures-catalyst"
   },
   {
     "image": "/images/book4.jpg",
     "title": "Psychedelic Prophets: The Letters of Aldous Huxley and Humphry Osmond",
     "author": "by Patrick Farrell et al.",
-    "role": "Copy editing, annotations, index"
+    "role": "Copy editing, annotations, index",
+    "url": "https://www.mqup.ca/psychedelic-prophets-products-9780773555068.php"
   },
   {
     "image": "/images/book5.jpg",
     "title": "Prairie Fairies: A History of Queer Communities and People in Western Canada, 1930–1985",
     "author": "by Valerie J. Korinek",
-    "role": "Index"
+    "role": "Index",
+    "url": "https://utppublishing.com/doi/10.3138/9780802095312"
   },
   {
     "image": "/images/book6.jpg",
     "title": "Hermann Cohen and the Crisis of Liberalism",
     "author": "by Paul E. Nahme",
-    "role": "Index"
+    "role": "Index",
+    "url": "https://iupress.org/9780253039750/hermann-cohen-and-the-crisis-of-liberalism/"
   },
   {
     "image": "/images/book7.jpg",
     "title": "Challenging Choices: Canada's Population Control in the 1970s",
     "author": "by Erika Dyck & Maureen Lux",
-    "role": "Editing"
+    "role": "Editing",
+    "url": "https://www.mqup.ca/challenging-choices-products-9780228003748.php"
   },
   {
     "image": "/images/book8.jpg",
     "title": "Yiddish in Israel: A History",
     "author": "by Rachel Rojanski",
-    "role": "Index"
+    "role": "Index",
+    "url": "https://iupress.org/9780253045140/yiddish-in-israel/"
   },
   {
     "image": "/images/book9.jpg",
     "title": "Health Systems in Transition: Mexico",
     "author": "by Miguel A Gonzalez Block et al.",
-    "role": "Copy editing"
+    "role": "Copy editing",
+    "url": "https://utppublishing.com/doi/book/10.3138/9781487508524"
   },
   {
     "image": "/images/book10.jpg",
     "title": "The Acid Room: The Psychedelic Trials and Tribulations of Hollywood Hospital",
     "author": "by Jesse Donaldson & Erika Dyck",
-    "role": "Editor"
+    "role": "Editor",
+    "url": "https://www.anvilpress.com/books/the-acid-room-the-psychedelic-trials-and-tribulations-of-hollywood-hospital"
   },
   {
     "image": "/images/book11.jpg",
     "title": "Educating for Citizenship in a Canada-China Sister School Reciprocal Learning Partnership: A West-East Collaborative Inquiry",
     "author": "by Yishin Khoo",
-    "role": "Editor"
+    "role": "Editor",
+    "url": "https://link.springer.com/book/10.1007/978-3-031-18078-1"
   },
   {
     "image": "/images/book12.jpg",
     "title": "Women and Psychedelics: Uncovering Invisible Voices",
     "author": "by Patrick Farrell et al.",
-    "role": "Editor"
+    "role": "Editor",
+    "url": "https://synergeticpress.com/catalog/women-and-psychedelics/"
   },
   {
     "image": "/images/book13.jpg",
     "title": "Metis Matriarchs: Agents of Transition",
     "author": "by Cheryl Troupe & Doris Jeanne Mackinnon",
-    "role": "Editorial support"
+    "role": "Editorial support",
+    "url": "https://uofrpress.ca/Books/M/Metis-Matriarchs"
   },
   {
     "image": "/images/book14.jpg",
     "title": "Expanding Mindscapes: A Global History of Psychedelics",
     "author": "by Erika Dyck & Chris Elcock",
-    "role": "Editorial support"
+    "role": "Editorial support",
+    "url": "https://mitpress.mit.edu/9780262546935/expanding-mindscapes/"
   },
   {
     "image": "/images/book15.jpg",
     "title": "Psychedelics: A Visual Odyssey",
     "author": "by Erika Dyck",
-    "role": "Editorial and research support"
+    "role": "Editorial and research support",
+    "url": "https://mitpress.mit.edu/9780262547666/psychedelics/"
   },
   {
     "image": "/images/book16.jpg",
     "title": "Putting Down Roots: Metis Agency, Land Use, and Women's Food Labour in a Qu'Appelle Valley Road Allowance Community",
     "author": "by Cheryl Troupe",
-    "role": "Editorial support"
+    "role": "Editorial support",
+    "url": "https://uofmpress.ca/books/putting-down-roots"
   },
   {
     "image": "/images/book17.jpg",
     "title": "Tommy Douglas and the Quest for Medicare in Canada",
     "author": "by Greg P. Marchildon",
-    "role": "Provided editorial feedback on an early draft"
+    "role": "Provided editorial feedback on an early draft",
+    "url": "https://utppublishing.com/doi/book/10.3138/9781487560430"
   },
   {
     "image": "/images/book18.jpg",
     "title": "West-East Reciprocal Learning in a Canada-China Sister School Network: Stories of Hope",
     "author": "by Yishin Khoo et al.",
-    "role": "Developmental Editing"
+    "role": "Developmental Editing",
+    "url": "https://link.springer.com/book/10.1007/978-3-031-87465-9"
   },
   {
     "image": "/images/book19.jpg",
     "title": "West-East Reciprocal Learning in Teacher Education: From Knowing to Doing",
     "author": "by Shijin Xu et al.",
-    "role": "Developmental Editing"
+    "role": "Developmental Editing",
+    "url": "https://link.springer.com/book/10.1007/978-3-031-69714-2"
   },
   {
     "image": "/images/book20.jpg",
     "title": "Winter Never Fails to Turn to Spring: Miyo's Story",
     "author": "by Miyo Kozasa & Linda Page",
-    "role": "Developmental Editing"
+    "role": "Developmental Editing",
+    "url": ""
   }
 ]
