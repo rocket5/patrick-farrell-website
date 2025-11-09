@@ -8,6 +8,7 @@ import expertiseData from "@/data/expertise.json";
 import testimonialsData from "@/data/testimonials.json";
 import heroData from "@/data/hero.json";
 import bioData from "@/data/bio.json";
+import { withBasePath } from "@/lib/utils";
 
 export default function Home() {
   const [openAccordion, setOpenAccordion] = useState<string | null>("for-everyone");
@@ -32,7 +33,7 @@ export default function Home() {
                 <div className="w-full sm:w-[217px] shrink-0">
                   <div className="aspect-217/281 relative">
                     <Image
-                      src="/images/headshot.jpg"
+                      src={withBasePath("/images/headshot.jpg")}
                       alt="Patrick Farrell"
                       fill
                       sizes="(max-width: 640px) 100vw, 217px"
@@ -124,7 +125,7 @@ export default function Home() {
                 <BookWrapper key={index} {...wrapperProps}>
                   <div className="w-full aspect-826/1253 relative overflow-hidden">
                     <Image
-                      src={book.image}
+                      src={withBasePath(book.image)}
                       alt={book.title}
                       fill
                       sizes="(max-width: 640px) 100vw, 250px"
@@ -177,7 +178,7 @@ export default function Home() {
                   </h3>
                   <div className="w-6 h-6 shrink-0">
                     <Image
-                      src={openAccordion === section.id ? "/images/chevron-up.svg" : "/images/chevron-down.svg"}
+                      src={withBasePath(openAccordion === section.id ? "/images/chevron-up.svg" : "/images/chevron-down.svg")}
                       alt={openAccordion === section.id ? "Collapse" : "Expand"}
                       width={24}
                       height={24}
