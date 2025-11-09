@@ -1,0 +1,26 @@
+{
+  "name": "Patrick Farrell",
+  "blurb": "In an era of artificial intelligence, I bring human attention and human intelligence to ensure every element of your writing is as good as it can be.",
+  "navigation": [
+    {
+      "label": "Services",
+      "href": "#services"
+    },
+    {
+      "label": "Books",
+      "href": "#books"
+    },
+    {
+      "label": "Expertise",
+      "href": "#expertise"
+    },
+    {
+      "label": "Testimonials",
+      "href": "#testimonials"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ]
+}
