@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [openAccordion, setOpenAccordion] = useState<string | null>("for-everyone");
-  const [showAllBooks, setShowAllBooks] = useState(false);
+  const [booksToShow, setBooksToShow] = useState(8);
 
   const books = [
     {
@@ -32,9 +32,106 @@ export default function Home() {
       author: "by Patrick Farrell et al.",
       role: "Copy editing, annotations, index",
     },
+    {
+      image: "/images/book5.jpg",
+      title: "Prairie Fairies: A History of Queer Communities and People in Western Canada, 1930–1985",
+      author: "by Valerie J. Korinek",
+      role: "Index",
+    },
+    {
+      image: "/images/book6.jpg",
+      title: "Hermann Cohen and the Crisis of Liberalism",
+      author: "by Paul E. Nahme",
+      role: "Index",
+    },
+    {
+      image: "/images/book7.jpg",
+      title: "Challenging Choices: Canada's Population Control in the 1970s",
+      author: "by Erika Dyck & Maureen Lux",
+      role: "Editing",
+    },
+    {
+      image: "/images/book8.jpg",
+      title: "Yiddish in Israel: A History",
+      author: "by Rachel Rojanski",
+      role: "Index",
+    },
+    {
+      image: "/images/book9.jpg",
+      title: "Health Systems in Transition: Mexico",
+      author: "by Miguel A Gonzalez Block et al.",
+      role: "Copy editing",
+    },
+    {
+      image: "/images/book10.jpg",
+      title: "The Acid Room: The Psychedelic Trials and Tribulations of Hollywood Hospital",
+      author: "by Jesse Donaldson & Erika Dyck",
+      role: "Editor",
+    },
+    {
+      image: "/images/book11.jpg",
+      title: "Educating for Citizenship in a Canada-China Sister School Reciprocal Learning Partnership: A West-East Collaborative Inquiry",
+      author: "by Yishin Khoo",
+      role: "Editor",
+    },
+    {
+      image: "/images/book12.jpg",
+      title: "Women and Psychedelics: Uncovering Invisible Voices",
+      author: "by Patrick Farrell et al.",
+      role: "Editor",
+    },
+    {
+      image: "/images/book13.jpg",
+      title: "Metis Matriarchs: Agents of Transition",
+      author: "by Cheryl Troupe & Doris Jeanne Mackinnon",
+      role: "Editorial support",
+    },
+    {
+      image: "/images/book14.jpg",
+      title: "Expanding Mindscapes: A Global History of Psychedelics",
+      author: "by Erika Dyck & Chris Elcock",
+      role: "Editorial support",
+    },
+    {
+      image: "/images/book15.jpg",
+      title: "Psychedelics: A Visual Odyssey",
+      author: "by Erika Dyck",
+      role: "Editorial and research support",
+    },
+    {
+      image: "/images/book16.jpg",
+      title: "Putting Down Roots: Metis Agency, Land Use, and Women's Food Labour in a Qu'Appelle Valley Road Allowance Community",
+      author: "by Cheryl Troupe",
+      role: "Editorial support",
+    },
+    {
+      image: "/images/book17.jpg",
+      title: "Tommy Douglas and the Quest for Medicare in Canada",
+      author: "by Greg P. Marchildon",
+      role: "Provided editorial feedback on an early draft",
+    },
+    {
+      image: "/images/book18.jpg",
+      title: "West-East Reciprocal Learning in a Canada-China Sister School Network: Stories of Hope",
+      author: "by Yishin Khoo et al.",
+      role: "Developmental Editing",
+    },
+    {
+      image: "/images/book19.jpg",
+      title: "West-East Reciprocal Learning in Teacher Education: From Knowing to Doing",
+      author: "by Shijin Xu et al.",
+      role: "Developmental Editing",
+    },
+    {
+      image: "/images/book20.jpg",
+      title: "Winter Never Fails to Turn to Spring: Miyo's Story",
+      author: "by Miyo Kozasa & Linda Page",
+      role: "Developmental Editing",
+    },
   ];
 
-  const displayedBooks = showAllBooks ? books : books.slice(0, 4);
+  const displayedBooks = books.slice(0, booksToShow);
+  const hasMoreBooks = booksToShow < books.length;
 
   const accordionSections = [
     {
@@ -117,6 +214,7 @@ export default function Home() {
                       src="/images/headshot.jpg"
                       alt="Patrick Farrell"
                       fill
+                      sizes="(max-width: 640px) 100vw, 217px"
                       className="object-cover"
                       priority
                     />
@@ -227,6 +325,7 @@ export default function Home() {
                     src={book.image}
                     alt={book.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, 250px"
                     className="object-cover"
                   />
                 </div>
@@ -241,10 +340,10 @@ export default function Home() {
               </div>
             ))}
           </div>
-          {!showAllBooks && (
+          {hasMoreBooks && (
             <div className="flex justify-center pt-8">
               <button
-                onClick={() => setShowAllBooks(true)}
+                onClick={() => setBooksToShow(prev => prev + 4)}
                 className="bg-bg-dark border border-text-muted px-4 py-3 text-base hover:bg-text-muted hover:text-bg-light transition-colors"
               >
                 Load More
