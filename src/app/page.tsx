@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import booksData from "@/data/books.json";
 import expertiseData from "@/data/expertise.json";
@@ -8,6 +7,7 @@ import bioData from "@/data/bio.json";
 import type { Book, Testimonial } from "@/types/data";
 import { BooksSection } from "@/components/BooksSection";
 import { ExpertiseSection } from "@/components/ExpertiseSection";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 export default function Home() {
   const books = booksData as Book[];
@@ -24,7 +24,7 @@ export default function Home() {
                 {/* Headshot */}
                 <div className="w-full sm:w-[217px] shrink-0">
                   <div className="aspect-217/281 relative">
-                    <Image
+                    <OptimizedImage
                       src="/images/headshot.jpg"
                       alt="Patrick Farrell - Professional Editor based in Toronto, Canada"
                       fill

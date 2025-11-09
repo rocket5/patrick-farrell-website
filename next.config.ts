@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+
+  // Performance & Build Optimizations
+  reactStrictMode: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;

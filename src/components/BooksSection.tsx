@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import type { Book } from "@/types/data";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 interface BooksSectionProps {
   books: Book[];
@@ -29,7 +29,7 @@ export function BooksSection({ books }: BooksSectionProps) {
           return (
             <BookWrapper key={index} {...wrapperProps}>
               <div className="w-full aspect-826/1253 relative overflow-hidden">
-                <Image
+                <OptimizedImage
                   src={book.image}
                   alt={book.title}
                   fill
@@ -54,6 +54,7 @@ export function BooksSection({ books }: BooksSectionProps) {
           <button
             onClick={() => setBooksToShow(prev => prev + 4)}
             className="bg-bg-dark border border-text-muted px-4 py-3 text-base hover:bg-text-muted hover:text-bg-light transition-colors"
+            aria-label={`Load ${Math.min(4, books.length - booksToShow)} more books. Currently showing ${booksToShow} of ${books.length} books`}
           >
             Load More
           </button>
