@@ -29,6 +29,7 @@ npm run lint
 - **TypeScript**: Strict mode enabled with ES2017 target
 - **Tailwind CSS 4**: Using the new `@theme inline` directive syntax and PostCSS plugin
 - **Fonts**: Geist Sans and Geist Mono loaded via `next/font/google`
+- **react-markdown**: For rendering markdown content
 
 ## Project Structure
 
@@ -91,7 +92,46 @@ public/               # Static assets
 
 ## Deployment
 
-This project is designed to be deployed on Vercel. The build process:
-1. `npm run build` creates optimized production build
-2. Static assets are generated in `.next/` directory
-3. Server-side rendering and API routes work out of the box on Vercel
+### GitHub Pages (Primary Deployment)
+
+This project is configured for automated deployment to GitHub Pages with a custom domain (patrickfarrell.ca).
+
+#### GitHub Actions Workflow
+- **File**: `.github/workflows/deploy.yml`
+- **Trigger**: Automatic deployment on push to `main` branch
+- **Process**:
+  1. Checks out code and sets up Node.js 20
+  2. Installs dependencies with `npm ci`
+  3. Builds static site with `npm run build`
+  4. Verifies static export to `out/` directory
+  5. Uploads artifact and deploys to GitHub Pages
+
+#### Static Export Configuration
+- **Next.js Config** (`next.config.ts`):
+  - `output: 'export'` - Enables static HTML export
+  - `images.unoptimized: true` - Required for static hosting
+  - **No basePath needed** - Custom domain serves from root (not `/repo-name`)
+
+#### Custom Domain Setup
+- **Domain**: patrickfarrell.ca
+- **CNAME file**: `public/CNAME` contains domain name
+- **Jekyll disable**: `public/.nojekyll` prevents Jekyll processing
+- **DNS**: Configure A records or CNAME to point to GitHub Pages
+
+#### Build Output
+- Development: `.next/` directory (not committed)
+- Production: `out/` directory with static HTML/CSS/JS
+- Assets: Images and static files from `public/` copied to `out/`
+
+#### Important Notes
+- The `output: 'export'` setting must remain in `next.config.ts`
+- Don't let GitHub Actions create `next.config.js` (would override TypeScript config)
+- Custom domains don't need `basePath` prefix in Next.js config
+- All pages must be statically generated (no server-side rendering or API routes)
+
+### Alternative: Vercel Deployment
+This project can also be deployed on Vercel for full Next.js features:
+1. Import repository to Vercel
+2. Vercel auto-detects Next.js and configures build
+3. Server-side rendering and API routes work automatically
+4. Remove `output: 'export'` from config for full SSR support
