@@ -1,18 +1,17 @@
 /**
- * Get the base path for assets based on environment
- * In production (GitHub Pages), assets need to be prefixed with the repo name
- * In development, no prefix is needed
+ * Get the base path for assets
+ * Since we're using a custom domain (patrickfarrell.ca), no basePath is needed
+ * @returns Empty string (no prefix)
  */
 export function getBasePath(): string {
-  return process.env.NODE_ENV === 'production' ? '/patrick-farrell-website' : '';
+  return '';
 }
 
 /**
- * Prefix a path with the basePath if in production
- * @param path - The path to prefix (should start with /)
- * @returns The prefixed path
+ * Returns the path unchanged (no basePath needed for custom domains)
+ * @param path - The path to return
+ * @returns The same path
  */
 export function withBasePath(path: string): string {
-  const basePath = getBasePath();
-  return `${basePath}${path}`;
+  return path;
 }
