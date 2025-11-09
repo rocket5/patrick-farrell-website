@@ -45,17 +45,17 @@ export default function Home() {
     {
       id: "for-academic",
       title: "For Academic Authors",
-      content: "",
+      content: "I am a professional editor with more than 20 years of experience supporting scholarly authors across disciplines, including neuroscience, education and pedagogy, and medical, psychedelic, Indigenous, and LGBTQ+ history. My editorial contributions span over two dozen book projects, encompassing copy editing, substantive editing, fact-checking, annotations, and indexing. I bring rigour and precision to every stage of the editorial process, with a deep respect for intellectual clarity and scholarly integrity. Whether refining the language of a complex argument or ensuring citation accuracy, my goal is to help authors present their ideas with authority and polish.",
     },
     {
       id: "for-creative",
       title: "For Creative Writers",
-      content: "",
+      content: "I’m a professional editor with two decades of experience helping writers shape and strengthen their work. I’ve worked on over two dozen books, offering everything from line-by-line copy editing, to big-picture story development. My approach is thoughtful and collaborative: I listen closely, edit carefully, and help authors refine their voice while enhancing the overall coherence and emotional impact of their writing. Whether you’re polishing a finished manuscript or navigating early drafts, I bring insight, structure, and attention to detail that supports your creative vision.",
     },
     {
       id: "for-publishers",
       title: "For Publishers",
-      content: "",
+      content: "With over 20 years in the field, I bring seasoned editorial expertise to a wide range of publishing projects. I’ve worked on more than two dozen books, in close partnership with prestigious/esteemed/highly reputed publishing houses such as Viking Penguin, MIT Press, and McGill-Queen University Press among others. On these projects, I have provided services that include copy editing, substantive editing, fact-checking, annotation, production, and indexing. I understand the demands of production schedules and the importance of consistency, clarity, and accuracy. As a trusted freelance partner, I offer meticulous, deadline-driven work and a flexible editorial skill set to support your publishing needs from manuscript to final proof.",
     },
   ];
 
