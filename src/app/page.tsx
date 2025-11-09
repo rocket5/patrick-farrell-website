@@ -117,18 +117,18 @@ export default function Home() {
             {displayedBooks.map((book, index) => {
               const BookWrapper = book.url ? 'a' : 'div';
               const wrapperProps = book.url
-                ? { href: book.url, target: "_blank", rel: "noopener noreferrer", className: "w-full sm:w-[250px] flex flex-col items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity" }
+                ? { href: book.url, target: "_blank", rel: "noopener noreferrer", className: "w-full sm:w-[250px] flex flex-col items-center gap-3 cursor-pointer group" }
                 : { className: "w-full sm:w-[250px] flex flex-col items-center gap-3" };
 
               return (
                 <BookWrapper key={index} {...wrapperProps}>
-                  <div className="w-full aspect-[826/1253] relative">
+                  <div className="w-full aspect-[826/1253] relative overflow-hidden">
                     <Image
                       src={book.image}
                       alt={book.title}
                       fill
                       sizes="(max-width: 640px) 100vw, 250px"
-                      className="object-cover"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <div className="text-center px-2 space-y-2">
