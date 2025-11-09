@@ -29,8 +29,8 @@ export default function Home() {
             <div className="flex flex-col gap-6 lg:gap-8 w-full">
               <div className="flex flex-col sm:flex-row gap-6 lg:gap-8">
                 {/* Headshot */}
-                <div className="w-full sm:w-[217px] flex-shrink-0">
-                  <div className="aspect-[217/281] relative">
+                <div className="w-full sm:w-[217px] shrink-0">
+                  <div className="aspect-217/281 relative">
                     <Image
                       src="/images/headshot.jpg"
                       alt="Patrick Farrell"
@@ -45,17 +45,17 @@ export default function Home() {
                 {/* Name and Navigation */}
                 <div className="flex flex-col gap-4 flex-1">
                   <div className="flex flex-col gap-2">
-                    <h1 className="font-[family-name:var(--font-source-sans)] text-4xl sm:text-5xl lg:text-[80px] font-bold leading-none text-text-black">
+                    <h1 className="font-(family-name:--font-source-sans) text-4xl sm:text-5xl lg:text-[80px] font-bold leading-none text-text-black">
                       {heroData.name}
                     </h1>
-                    <p className="font-[family-name:var(--font-inter)] text-lg sm:text-2xl lg:text-[32px] font-medium text-text-muted leading-normal">
+                    <p className="font-(family-name:--font-inter) text-lg sm:text-2xl lg:text-[32px] font-medium text-text-muted leading-normal">
                       {heroData.blurb}
                     </p>
                   </div>
 
                   {/* Navigation */}
-                  <nav className="border-t-2 border-bg-dark pt-4">
-                    <ul className="flex flex-wrap gap-6 lg:gap-[72px] text-base font-[family-name:var(--font-inter)]">
+                  <nav className="border-t-2 border-b-2 border-bg-dark">
+                    <ul className="flex flex-wrap gap-x-6 gap-y-1 lg:gap-x-[72px] text-base font-(family-name:--font-inter)">
                       {heroData.navigation.map((item) => (
                         <li key={item.href}>
                           <a href={item.href} className="hover:text-text-muted transition-colors">
@@ -89,7 +89,7 @@ export default function Home() {
 
         {/* Services Section */}
         <section id="services" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-[family-name:var(--font-inter)] border-b-2 border-bg-dark pb-2 mb-3">
+          <h2 className="text-xl font-bold font-(family-name:--font-inter) border-b-2 border-bg-dark pb-2 mb-3">
             Services
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -110,7 +110,7 @@ export default function Home() {
 
         {/* Books Section */}
         <section id="books" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-[family-name:var(--font-inter)] border-b-2 border-bg-dark pb-2 mb-3">
+          <h2 className="text-xl font-bold font-(family-name:--font-inter) border-b-2 border-bg-dark pb-2 mb-3">
             Books
           </h2>
           <div className="flex flex-wrap justify-center gap-6 lg:gap-x-6 lg:gap-y-16">
@@ -122,7 +122,7 @@ export default function Home() {
 
               return (
                 <BookWrapper key={index} {...wrapperProps}>
-                  <div className="w-full aspect-[826/1253] relative overflow-hidden">
+                  <div className="w-full aspect-826/1253 relative overflow-hidden">
                     <Image
                       src={book.image}
                       alt={book.title}
@@ -157,7 +157,7 @@ export default function Home() {
 
         {/* Expertise Section */}
         <section id="expertise" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-[family-name:var(--font-inter)] border-b-2 border-bg-dark pb-2 mb-8">
+          <h2 className="text-xl font-bold font-(family-name:--font-inter) border-b-2 border-bg-dark pb-2 mb-8">
             Expertise
           </h2>
           <p className="text-base leading-6 mb-8">
@@ -170,10 +170,10 @@ export default function Home() {
                   onClick={() => setOpenAccordion(openAccordion === section.id ? null : section.id)}
                   className="w-full flex items-center justify-between text-left"
                 >
-                  <h3 className="text-xl font-bold font-[family-name:var(--font-inter)]">
+                  <h3 className="text-xl font-bold font-(family-name:--font-inter)">
                     {section.title}
                   </h3>
-                  <div className="w-6 h-6 flex-shrink-0">
+                  <div className="w-6 h-6 shrink-0">
                     <Image
                       src={openAccordion === section.id ? "/images/chevron-up.svg" : "/images/chevron-down.svg"}
                       alt={openAccordion === section.id ? "Collapse" : "Expand"}
@@ -194,7 +194,7 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section id="testimonials" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-[family-name:var(--font-inter)] border-b-2 border-bg-dark pb-2 mb-8">
+          <h2 className="text-xl font-bold font-(family-name:--font-inter) border-b-2 border-bg-dark pb-2 mb-8">
             Testimonials
           </h2>
           <div className="flex flex-wrap gap-[18px]">
@@ -212,7 +212,7 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-[family-name:var(--font-inter)] border-b-2 border-bg-dark pb-2 mb-3">
+          <h2 className="text-xl font-bold font-(family-name:--font-inter) border-b-2 border-bg-dark pb-2 mb-3">
             Contact
           </h2>
           <p className="text-base leading-6">
