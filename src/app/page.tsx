@@ -93,17 +93,17 @@ export default function Home() {
             Services
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            <div className="bg-bg-dark p-6 lg:p-8">
-              <p className="text-base leading-6">Developmental and substantive editing</p>
+            <div className="bg-bg-dark p-6 lg:p-8 border border-bg-dark hover:border-[#D3D3D3] transition-all duration-300 group">
+              <p className="text-base leading-6 text-text-muted group-hover:text-text-black transition-colors duration-300">Developmental and substantive editing</p>
             </div>
-            <div className="bg-bg-dark p-6 lg:p-8">
-              <p className="text-base leading-6">Copy editing and proofreading</p>
+            <div className="bg-bg-dark p-6 lg:p-8 border border-bg-dark hover:border-[#D3D3D3] transition-all duration-300 group">
+              <p className="text-base leading-6 text-text-muted group-hover:text-text-black transition-colors duration-300">Copy editing and proofreading</p>
             </div>
-            <div className="bg-bg-dark p-6 lg:p-8">
-              <p className="text-base leading-6">Manuscription preparation and production editing</p>
+            <div className="bg-bg-dark p-6 lg:p-8 border border-bg-dark hover:border-[#D3D3D3] transition-all duration-300 group">
+              <p className="text-base leading-6 text-text-muted group-hover:text-text-black transition-colors duration-300">Manuscription preparation and production editing</p>
             </div>
-            <div className="bg-bg-dark p-6 lg:p-8">
-              <p className="text-base leading-6">Indexing</p>
+            <div className="bg-bg-dark p-6 lg:p-8 border border-bg-dark hover:border-[#D3D3D3] transition-all duration-300 group">
+              <p className="text-base leading-6 text-text-muted group-hover:text-text-black transition-colors duration-300">Indexing</p>
             </div>
           </div>
         </section>
