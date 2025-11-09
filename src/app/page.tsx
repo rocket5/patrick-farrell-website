@@ -23,9 +23,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-bg-light">
-      <main className="mx-auto max-w-[1440px] px-4 sm:px-8 lg:px-[175px] pt-16 sm:pt-24 lg:pt-32 pb-4">
+      <main className="mx-auto max-w-[1440px] px-4 sm:px-8 lg:px-[175px] pt-16 sm:pt-24 lg:pt-32 pb-4" role="main">
         {/* Hero Section */}
-        <section className="mb-12 sm:mb-16 lg:mb-24">
+        <section className="mb-12 sm:mb-16 lg:mb-24" aria-label="Introduction">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start lg:items-end">
             <div className="flex flex-col gap-6 lg:gap-8 w-full">
               <div className="flex flex-col sm:flex-row gap-6 lg:gap-8">
@@ -34,7 +34,7 @@ export default function Home() {
                   <div className="aspect-217/281 relative">
                     <Image
                       src={withBasePath("/images/headshot.jpg")}
-                      alt="Patrick Farrell"
+                      alt="Patrick Farrell - Professional Editor based in Toronto, Canada"
                       fill
                       sizes="(max-width: 640px) 100vw, 217px"
                       className="object-cover"
@@ -89,9 +89,9 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section id="services" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-3">
-            Services
+        <section id="services" className="mb-12 sm:mb-16 lg:mb-24" aria-labelledby="services-heading">
+          <h2 id="services-heading" className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-3">
+            Professional Editing Services
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             <div className="bg-bg-dark p-6 lg:p-8 border border-bg-dark hover:border-[#D3D3D3] transition-all duration-300 group">
@@ -110,9 +110,9 @@ export default function Home() {
         </section>
 
         {/* Books Section */}
-        <section id="books" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-3">
-            Books
+        <section id="books" className="mb-12 sm:mb-16 lg:mb-24" aria-labelledby="books-heading">
+          <h2 id="books-heading" className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-3">
+            Published Books
           </h2>
           <div className="flex flex-wrap justify-center gap-6 lg:gap-x-6 lg:gap-y-16">
             {displayedBooks.map((book, index) => {
@@ -157,9 +157,9 @@ export default function Home() {
         </section>
 
         {/* Expertise Section */}
-        <section id="expertise" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-8">
-            Expertise
+        <section id="expertise" className="mb-12 sm:mb-16 lg:mb-24" aria-labelledby="expertise-heading">
+          <h2 id="expertise-heading" className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-8">
+            Editorial Expertise
           </h2>
           {expertiseData.find(item => item.id === "introduction") && (
             <p className="text-base leading-6 mb-8">
@@ -196,9 +196,9 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-8">
-            Testimonials
+        <section id="testimonials" className="mb-12 sm:mb-16 lg:mb-24" aria-labelledby="testimonials-heading">
+          <h2 id="testimonials-heading" className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-8">
+            Client Testimonials
           </h2>
           <div className="flex flex-wrap gap-[18px]">
             {testimonials.map((testimonial, index) => (
@@ -214,16 +214,20 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="mb-12 sm:mb-16 lg:mb-24">
-          <h2 className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-3">
-            Contact
+        <section id="contact" className="mb-12 sm:mb-16 lg:mb-24" aria-labelledby="contact-heading">
+          <h2 id="contact-heading" className="text-xl font-bold font-sans border-b-2 border-bg-dark pb-2 mb-3">
+            Contact Patrick Farrell
           </h2>
           <p className="text-base leading-6">
             Email{" "}
-            <a href="mailto:pherzen@gmail.com" className="underline hover:text-text-muted transition-colors">
+            <a
+              href="mailto:pherzen@gmail.com"
+              className="underline hover:text-text-muted transition-colors"
+              aria-label="Email Patrick Farrell at pherzen@gmail.com"
+            >
               pherzen@gmail.com
             </a>{" "}
-            to talk about how I can help with your project.
+            to talk about how I can help with your editing project in Toronto, Canada, or remotely across North America.
           </p>
         </section>
 
