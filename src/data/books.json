@@ -1,9 +1,16 @@
 [
   {
+    "image": "/images/book21.jpg",
+    "title": "Always a Part of the Land",
+    "author": "by Cody Groat",
+    "role": "Editor, Index",
+    "url": "https://www.mqup.ca/Books/A/Always-a-Part-of-the-Land"
+  },
+  {
     "image": "/images/book1.jpg",
     "title": "The Brain's Way of Healing",
     "author": "by Norman Doidge",
-    "role": "Assistant, copy editing, research",
+    "role": "Assistant, Copy Editing, Research",
     "url": "https://www.penguinrandomhouse.com/books/308751/the-brains-way-of-healing-by-norman-doidge-md/"
   },
   {
@@ -24,7 +31,7 @@
     "image": "/images/book4.jpg",
     "title": "Psychedelic Prophets: The Letters of Aldous Huxley and Humphry Osmond",
     "author": "by Patrick Farrell et al.",
-    "role": "Copy editing, annotations, index",
+    "role": "Copy Editing, Annotations, Index",
     "url": "https://www.mqup.ca/psychedelic-prophets-products-9780773555068.php"
   },
   {
@@ -59,7 +66,7 @@
     "image": "/images/book9.jpg",
     "title": "Health Systems in Transition: Mexico",
     "author": "by Miguel A Gonzalez Block et al.",
-    "role": "Copy editing",
+    "role": "Copy Editing",
     "url": "https://utppublishing.com/doi/book/10.3138/9781487508524"
   },
   {
@@ -87,28 +94,28 @@
     "image": "/images/book13.jpg",
     "title": "Metis Matriarchs: Agents of Transition",
     "author": "by Cheryl Troupe & Doris Jeanne Mackinnon",
-    "role": "Editorial support",
+    "role": "Editorial Support",
     "url": "https://uofrpress.ca/Books/M/Metis-Matriarchs"
   },
   {
     "image": "/images/book14.jpg",
     "title": "Expanding Mindscapes: A Global History of Psychedelics",
     "author": "by Erika Dyck & Chris Elcock",
-    "role": "Editorial support",
+    "role": "Editorial Support",
     "url": "https://mitpress.mit.edu/9780262546935/expanding-mindscapes/"
   },
   {
     "image": "/images/book15.jpg",
     "title": "Psychedelics: A Visual Odyssey",
     "author": "by Erika Dyck",
-    "role": "Editorial and research support",
+    "role": "Editorial and Research Support",
     "url": "https://mitpress.mit.edu/9780262547666/psychedelics/"
   },
   {
     "image": "/images/book16.jpg",
     "title": "Putting Down Roots: Metis Agency, Land Use, and Women's Food Labour in a Qu'Appelle Valley Road Allowance Community",
     "author": "by Cheryl Troupe",
-    "role": "Editorial support",
+    "role": "Editorial Support",
     "url": "https://uofmpress.ca/books/putting-down-roots"
   },
   {
