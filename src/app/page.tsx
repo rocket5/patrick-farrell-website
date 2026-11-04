@@ -47,11 +47,11 @@ export default function Home() {
                   </div>
 
                   {/* Navigation */}
-                  <nav className="border-t-2 border-b-2 border-bg-dark">
+                  <nav className="border-t-2 border-bg-dark">
                     <ul className="flex flex-wrap gap-x-6 gap-y-1 lg:gap-x-[72px] text-base font-sans">
                       {heroData.navigation.map((item) => (
                         <li key={item.href}>
-                          <a href={item.href} className="hover:text-text-muted transition-colors">
+                          <a href={item.href} className="text-link">
                             {item.label}
                           </a>
                         </li>
@@ -68,7 +68,7 @@ export default function Home() {
                     key={index}
                     components={{
                       a: (props) => (
-                        <a {...props} className="underline hover:text-text-muted transition-colors" />
+                        <a {...props} className="text-link" />
                       ),
                     }}
                   >
@@ -133,11 +133,11 @@ export default function Home() {
           <p className="text-base leading-6">
             Email{" "}
             <a
-              href="mailto:pherzen@gmail.com"
-              className="underline hover:text-text-muted transition-colors"
-              aria-label="Email Patrick Farrell at pherzen@gmail.com"
+              href="mailto:patrickwrfarrell@gmail.com"
+              className="text-link"
+              aria-label="Email Patrick Farrell at patrickwrfarrell@gmail.com"
             >
-              pherzen@gmail.com
+              patrickwrfarrell@gmail.com
             </a>{" "}
             to talk about how I can help with your project.
           </p>

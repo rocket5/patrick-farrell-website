@@ -8,7 +8,7 @@ export default function StructuredData() {
     url: "https://patrickfarrell.ca",
     logo: "https://patrickfarrell.ca/open-graph-patrick-farrell.jpg",
     image: "https://patrickfarrell.ca/open-graph-patrick-farrell.jpg",
-    email: "pherzen@gmail.com",
+    email: "patrickwrfarrell@gmail.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Toronto",
@@ -31,7 +31,7 @@ export default function StructuredData() {
       "@type": "Person",
       name: "Patrick Farrell",
       jobTitle: "Professional Editor",
-      email: "pherzen@gmail.com",
+      email: "patrickwrfarrell@gmail.com",
       image: "https://patrickfarrell.ca/images/headshot.jpg",
       address: {
         "@type": "PostalAddress",

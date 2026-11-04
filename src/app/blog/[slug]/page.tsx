@@ -112,11 +112,11 @@ export default async function PostPage({ params }: PostPageProps) {
 
       <p className="mt-12 pt-4 border-t-2 border-bg-dark text-base text-text-muted">
         Patrick Farrell is a freelance editor based in Toronto.{" "}
-        <Link href="/#services" className="underline hover:text-text-black">
+        <Link href="/#services" className="text-link">
           See his editing services
         </Link>{" "}
         or{" "}
-        <Link href="/#contact" className="underline hover:text-text-black">
+        <Link href="/#contact" className="text-link">
           get in touch
         </Link>
         .

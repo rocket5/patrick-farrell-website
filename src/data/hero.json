@@ -3,6 +3,10 @@
   "blurb": "In an era of artificial intelligence, I bring human attention and human intelligence to ensure every element of your writing is as good as it can be.",
   "navigation": [
     {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
       "label": "Services",
       "href": "#services"
     },
@@ -17,10 +21,6 @@
     {
       "label": "Testimonials",
       "href": "#testimonials"
-    },
-    {
-      "label": "Blog",
-      "href": "/blog"
     },
     {
       "label": "Contact",

@@ -16,3 +16,18 @@ body {
 h1, h2, h3 {
   font-family: var(--font-source-sans), Georgia, serif;
 }
+
+/* Links within text: a faint dotted underline that turns solid on hover. */
+.text-link {
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: #a3a3a3;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.text-link:hover,
+.text-link:focus-visible {
+  text-decoration-style: solid;
+  text-decoration-color: currentColor;
+}

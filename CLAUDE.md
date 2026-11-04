@@ -48,7 +48,6 @@ src/
 │   ├── api/revalidate/ # Sanity webhook: refreshes blog pages on publish
 │   ├── sitemap.ts      # Generated sitemap, includes blog posts
 │   ├── error.tsx       # Error boundary (Client Component)
-│   ├── loading.tsx     # Loading state
 │   └── globals.css     # Global styles with Tailwind v4 syntax
 ├── components/
 │   ├── sections/       # Page sections (Client Components)
@@ -103,6 +102,7 @@ Components are organized by purpose:
 - Root level - Special components (StructuredData)
 
 ### Styling with Tailwind CSS 4
+- Links in text and the navigation use the shared `.text-link` class in `globals.css`: a faint dotted underline that turns solid on hover, with no colour change
 - Uses new `@import "tailwindcss"` syntax (not v3's `@tailwind` directives)
 - Custom theme values defined in `globals.css` with `@theme inline` block
 - CSS variables for theming: `--background`, `--foreground`, `--bg-light`, etc.
@@ -195,7 +195,6 @@ This site includes extensive performance optimizations:
 ### Loading Performance
 - Font optimization with swap and preload
 - Error boundaries for graceful failures
-- Loading states with Suspense
 - Pages prerendered as static content and served from Vercel's CDN
 
 ### Build Configuration
@@ -213,7 +212,7 @@ The site runs on Vercel (team `rocket5studios`, project `patrick-farrell-website
 
 ## Blog
 
-Patrick is non-technical and edits posts in Sanity Studio: https://patrickfarrell.ca/studio redirects to the hosted Studio. Keep the form minimal, and keep blog pages free of animation and hover effects.
+Patrick is non-technical and edits posts in Sanity Studio: https://patrickfarrell.ca/studio redirects to the hosted Studio. Keep the form minimal, and keep blog pages free of animation.
 
 - **Studio**: `studio/` is a standalone app using Sanity project `a9spmcts`, dataset `production`. It needs Node 22+ (`nvm use` inside `studio/`). Run `npm run dev` to work on it and `npm run deploy` to publish changes.
 - **Web address**: `studio/actions/publishWithSlug.ts` sets a post's hidden slug on first publish. Slugs don't change afterwards, so links keep working.
@@ -269,7 +268,6 @@ The site includes comprehensive accessibility features:
 - Descriptive labels on "Load More" button (shows progress)
 - Semantic HTML with proper heading hierarchy
 - Error boundary for graceful error handling
-- Loading states for better UX
 
 ## Common Tasks
 

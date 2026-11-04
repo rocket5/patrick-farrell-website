@@ -12,14 +12,14 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
           >
             {heroData.name}
           </Link>
-          <nav className="border-t-2 border-b-2 border-bg-dark">
+          <nav className="border-t-2 border-bg-dark">
             <ul className="flex flex-wrap gap-x-6 gap-y-1 lg:gap-x-[72px] text-base font-sans">
               {heroData.navigation.map((item) => (
                 <li key={item.href}>
                   {/* Homepage sections are "#services" on the homepage itself, so add the "/" here. */}
                   <Link
                     href={item.href.startsWith("#") ? `/${item.href}` : item.href}
-                    className="hover:text-text-muted"
+                    className="text-link"
                   >
                     {item.label}
                   </Link>

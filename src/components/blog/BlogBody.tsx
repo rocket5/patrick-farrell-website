@@ -7,7 +7,7 @@ const components: PortableTextComponents = {
   },
   marks: {
     link: ({ value, children }) => (
-      <a href={value?.href} className="underline hover:text-text-muted">
+      <a href={value?.href} className="text-link">
         {children}
       </a>
     ),
