@@ -44,6 +44,9 @@ src/
 ├── app/                # Next.js App Router directory
 │   ├── layout.tsx      # Root layout with fonts and metadata
 │   ├── page.tsx        # Home page (Server Component)
+│   ├── blog/           # Blog list and post pages, content from Sanity
+│   ├── api/revalidate/ # Sanity webhook: refreshes blog pages on publish
+│   ├── sitemap.ts      # Generated sitemap, includes blog posts
 │   ├── error.tsx       # Error boundary (Client Component)
 │   ├── loading.tsx     # Loading state
 │   └── globals.css     # Global styles with Tailwind v4 syntax
@@ -65,9 +68,8 @@ src/
 ├── types/
 │   └── data.ts         # TypeScript type definitions
 public/                 # Static assets
-├── images/             # Images (includes .jpg and .webp versions)
-├── CNAME               # Custom domain
-└── .nojekyll           # Disable Jekyll
+└── images/             # Images (includes .jpg and .webp versions)
+studio/                 # Sanity Studio: the blog editor, a separate app (Node 22+)
 scripts/
 ├── optimize-images.js  # Image optimization script
 └── README.md          # Script documentation
@@ -194,63 +196,30 @@ This site includes extensive performance optimizations:
 - Font optimization with swap and preload
 - Error boundaries for graceful failures
 - Loading states with Suspense
-- Static export for fast CDN delivery
+- Pages prerendered as static content and served from Vercel's CDN
 
 ### Build Configuration
-- `output: 'export'` for static site generation
 - `reactStrictMode: true` for catching bugs
 - `poweredByHeader: false` for security
 - ES2020 target for modern JavaScript features
 
 ## Deployment
 
-### GitHub Pages (Primary Deployment)
+The site runs on Vercel (team `rocket5studios`, project `patrick-farrell-website`). Pushing to `main` deploys to production at patrickfarrell.ca, and other branches get preview deployments. It no longer uses GitHub Pages or `output: 'export'`.
 
-This project is configured for automated deployment to GitHub Pages with a custom domain (patrickfarrell.ca).
+- **Domain**: `patrickfarrell.ca` is primary and `www` redirects to it. DNS is in Cloudflare with proxying off (DNS only).
+- **Environment**: `SANITY_REVALIDATE_SECRET` must match the secret on the Sanity webhook.
+- **Images**: `images.unoptimized` stays on. Homepage images are prebuilt WebP files, and blog images are resized by Sanity's CDN.
 
-#### GitHub Actions Workflow
-- **File**: `.github/workflows/deploy.yml`
-- **Trigger**: Automatic deployment on push to `main` branch
-- **Process**:
-  1. Checks out code and sets up Node.js 20
-  2. Installs dependencies with `npm ci`
-  3. Builds static site with `npm run build`
-  4. Verifies static export to `out/` directory
-  5. Uploads artifact and deploys to GitHub Pages
+## Blog
 
-#### Static Export Configuration
-- **Next.js Config** (`next.config.ts`):
-  - `output: 'export'` - Enables static HTML export
-  - `images.unoptimized: true` - Required for static hosting
-  - `reactStrictMode: true` - Development safety
-  - `poweredByHeader: false` - Remove X-Powered-By header
-  - **No basePath needed** - Custom domain serves from root (not `/repo-name`)
+Patrick is non-technical and edits posts in Sanity Studio: https://patrickfarrell.ca/studio redirects to the hosted Studio. Keep the form minimal, and keep blog pages free of animation and hover effects.
 
-#### Custom Domain Setup
-- **Domain**: patrickfarrell.ca
-- **CNAME file**: `public/CNAME` contains domain name
-- **Jekyll disable**: `public/.nojekyll` prevents Jekyll processing
-- **DNS**: Configure A records or CNAME to point to GitHub Pages
-
-#### Build Output
-- Development: `.next/` directory (not committed)
-- Production: `out/` directory with static HTML/CSS/JS
-- Assets: Images and static files from `public/` copied to `out/`
-- WebP images included in `out/images/`
-
-#### Important Notes
-- The `output: 'export'` setting must remain in `next.config.ts`
-- Don't let GitHub Actions create `next.config.js` (would override TypeScript config)
-- Custom domains don't need `basePath` prefix in Next.js config
-- All pages must be statically generated (no server-side rendering or API routes)
-- WebP images are automatically included in the build output
-
-### Alternative: Vercel Deployment
-This project can also be deployed on Vercel for full Next.js features:
-1. Import repository to Vercel
-2. Vercel auto-detects Next.js and configures build
-3. Server-side rendering and API routes work automatically
-4. Remove `output: 'export'` from config for full SSR support
+- **Studio**: `studio/` is a standalone app using Sanity project `a9spmcts`, dataset `production`. It needs Node 22+ (`nvm use` inside `studio/`). Run `npm run dev` to work on it and `npm run deploy` to publish changes.
+- **Web address**: `studio/actions/publishWithSlug.ts` sets a post's hidden slug on first publish. Slugs don't change afterwards, so links keep working.
+- **Fetching**: `src/lib/blog.ts` holds the queries and image helpers. Results are cached by Next.js under the `posts` tag, with an hourly refresh as a fallback.
+- **Publishing**: a Sanity webhook posts to `/api/revalidate`, which clears that tag so changes appear right away.
+- **Photos**: shown uncropped at their own shape by `BlogPhotoImage`. The first photo goes above the text and the rest below it.
 
 ## Image Optimization Workflow
 

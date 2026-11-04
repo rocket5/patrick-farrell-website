@@ -6,13 +6,14 @@ A highly-optimized, statically-generated personal website built with Next.js 16,
 
 ## Tech Stack
 
-- **Next.js 16** - App Router with static export & Server Components
+- **Next.js 16** - App Router with Server Components
 - **React 19** - Modern React with Server/Client Component architecture
 - **TypeScript** - Full type safety with ES2020 target
 - **Tailwind CSS 4** - Modern CSS framework with `@theme` syntax
 - **WebP Images** - Optimized images with automatic fallbacks
 - **react-markdown** - Markdown rendering support
-- **GitHub Actions** - Automated CI/CD to GitHub Pages
+- **Vercel** - Hosting, with automatic deployment from GitHub
+- **Sanity** - Content management for the blog
 
 ## Performance Highlights
 
@@ -45,7 +46,7 @@ Create a production build:
 npm run build
 ```
 
-This generates a static site in the `out/` directory, ready for deployment.
+This builds the site into the `.next/` directory.
 
 ### Image Optimization
 
@@ -74,7 +75,6 @@ npm run lint
 ```
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml          # GitHub Pages deployment
 ├── public/
 │   ├── CNAME                   # Custom domain config
 │   ├── .nojekyll              # Disable Jekyll
@@ -101,7 +101,7 @@ npm run lint
 │   │   └── validations.ts      # Zod schemas (optional)
 │   └── types/
 │       └── data.ts             # TypeScript types
-├── next.config.ts              # Next.js config (static export)
+├── next.config.ts              # Next.js config
 └── tsconfig.json               # TypeScript config (ES2020)
 ```
 
@@ -110,7 +110,6 @@ npm run lint
 ### Architecture
 - **Server Components First**: Main page is a Server Component for optimal performance
 - **Strategic Client Components**: Only interactive sections use client-side JavaScript
-- **Static Export**: Configured with `output: 'export'` for GitHub Pages
 - **Type Safety**: Full TypeScript coverage with strict mode
 
 ### Performance Optimizations
@@ -124,24 +123,18 @@ npm run lint
 - **Structured Data**: JSON-LD schema for search engines
 - **ARIA Labels**: Enhanced accessibility on interactive elements
 - **Semantic HTML**: Proper heading hierarchy and landmarks
-- **Custom Domain**: Deployed to patrickfarrell.ca via CNAME
+- **Custom Domain**: Deployed to patrickfarrell.ca
 - **Optimized Metadata**: Comprehensive meta tags and Open Graph
 
 ### Developer Experience
 - **Organized Components**: Clear separation of sections, UI, and utilities
 - **Modern JavaScript**: ES2020 features (optional chaining, nullish coalescing)
 - **Validation Ready**: Zod schemas prepared for runtime type checking
-- **Auto Deployment**: Push to `main` triggers automatic GitHub Pages deployment
+- **Auto Deployment**: Push to `main` triggers a Vercel production deployment
 
 ## Deployment
 
-This site automatically deploys to GitHub Pages when changes are pushed to the `main` branch.
-
-### GitHub Pages Setup
-1. GitHub Actions workflow builds the static site
-2. Exports to `out/` directory (includes optimized WebP images)
-3. Deploys to GitHub Pages
-4. Serves via custom domain (patrickfarrell.ca)
+This site deploys to Vercel automatically when changes are pushed to the `main` branch.
 
 See [CLAUDE.md](./CLAUDE.md) for detailed development and deployment instructions.
 
@@ -157,5 +150,4 @@ See [CLAUDE.md](./CLAUDE.md) for detailed development and deployment instruction
 - [Next.js Documentation](https://nextjs.org/docs)
 - [React 19 Documentation](https://react.dev)
 - [Tailwind CSS 4](https://tailwindcss.com)
-- [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [WebP Image Format](https://developers.google.com/speed/webp)
