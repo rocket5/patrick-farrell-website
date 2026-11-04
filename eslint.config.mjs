@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Ignore scripts directory (Node.js scripts, not Next.js code)
     "scripts/**",
+    // The Sanity Studio is a separate app with its own dependencies
+    "studio/**",
   ]),
 ]);
 

@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
-// When using a custom domain (patrickfarrell.ca), GitHub Pages serves from root
-// basePath is NOT needed for custom domains, only for username.github.io/repo-name URLs
 const nextConfig: NextConfig = {
-  output: 'export',
   images: {
     unoptimized: true,
   },
@@ -11,6 +8,17 @@ const nextConfig: NextConfig = {
   // Performance & Build Optimizations
   reactStrictMode: true,
   poweredByHeader: false,
+
+  // Easy-to-remember address for the blog editor, which is hosted by Sanity
+  async redirects() {
+    return [
+      {
+        source: "/studio/:path*",
+        destination: "https://patrickfarrell.sanity.studio/:path*",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
